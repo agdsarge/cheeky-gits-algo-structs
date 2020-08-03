@@ -1,0 +1,73 @@
+03 August
+Analyzing Array and Object performance
+
+__00_Intro__
+
+Let's take a look at built-in data structures in JS through the lens of Big O
+
+__01_Objects__
+
+Objects are unordered key-value pairs.
+
+They work well when you don't need oreder and need fast access, insertion, or removal.
+
+Objects:
+        Insertion           O(1)
+        Removal             O(1)
+        Access              O(1)
+        Update              O(1)
+        Search              O(n)
+
+An object has no beginning or ending, which is why insertion is so efficient.
+
+By search, we mean checking whether a value is in the object. Potentially, we'd have to check every key-value pair, so search is O(n).
+
+Object methods:
+        Object.keys         O(n)
+        Object.values       O(n)
+        Object.entries      O(n)
+        hasOwnPropert)      O(1)
+
+
+__02_Arrays__
+
+Arrays, if you know the index, you can jump in O(1)
+
+Arrays:
+        Access              O(1)
+        Insertion           Depends. Worst-case O(n)
+        Removal             Depends. Worst-case O(n)
+        Searching           O(n)
+
+
+Insertion is tough, because you have to re-index every element of the array. Re-indexing is nontrivial for large arrays. 
+
+The same argument applies to removal.
+
+Thus,
+Push and Pop are more efficient than Shift and Unshift
+
+
+By searching, we mean an unsorted array.
+
+__03_Array_methods__
+
+Array method complexities:
+
+        push        O(1)
+        pop         O(1)
+        shift       O(n)
+        unshift     O(n)
+        concat      O(n)
+        slice       O(n)
+        splice      O(n)
+        sort        O(nlogn)
+        forEach     O(n)
+        map         O(n)
+        reduce      O(n)
+
+The important one to keep in mind is sort().
+
+
+
+
