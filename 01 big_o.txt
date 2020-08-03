@@ -13,7 +13,7 @@ Performance matters at large scales. We need a precise vocabulary to discuss cod
 There are trade-offs between different approaches. Furthermore, it's useful to know where the inefficient 'choke-points' of your code.
 
 __01__
-Colt discusses how to add Sigma I (sum of all integers between 1 and n). It's more efficient to use an "Euler formula" like (n * (n + 1) / 2) than an accumulator. (total += i)
+Colt discusses how to add the sum of all integers between 1 and n). It's more efficient to use an "Euler formula" like (n * (n + 1) / 2) than an accumulator. ( for i; i < n; i++; total += i)
 
 The 'Euler formula' is better with respect to time. 
 
@@ -29,7 +29,77 @@ The Euler formula has roughly three operations. The accumulator needs n operatio
 So, the 'Euler formula' is better.
 
 __03__
-If we graph performativity (time elapsed with respect to input size), we can see the general shape or curvature of different algorithmic approaches 
+If we plot performativity on a graph (time elapsed with respect to input size), we can see the general shape or curvature of different algorithmic approaches 
+
+__04__Intro_to_Big_O
+
+**We say an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a coefficient times f(n) as n increases.**
+
+Thus, the Euler formula is O(1). Even though it's 3 operations, we can simplify to the order of magnitude 3O(1) => O(1). (This is constant time).
+
+The accumulator, which needs one or two operations for every input is 2O(n) -> O(n). (This is linear time).
+
+A nested loop, like if you need to print all ordered pairs of integers in an NxN space, requires O(n**2) complexity. (this is called quadratic time).
+
+__05_Simplifying_Big_O_Expressions__
+
+1. Constants (Coefficients) do not matter
+thus,   O(2n)       => O(n)
+        O(500)      => O(1)
+        O(13n**2)   => O(n**2)
+
+2. Smaller terms do not matter
+thus,   O(n + 10)   => O(n)
+        O(n**2 + 5n + 8) => O(n**2)
+
+For a more advanced treatment, consider asymptotic analysis. (https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/AnalAsymptotic.html)
+
+Good rules of thumb:
+1. Arithmetic is constant
+2. Variable assignment is constant
+3. Retrieving data from a hash or an array is constant.
+4. For an array, multiply the size of the array by the operation done on each element of the array.
+
+
+__06_Space_Complexity__
+
+**Auxiliary space complexity - the space required by the algorithm, excluding the space taken up by the inputs.**
+
+Most primitives are constant space.
+
+String require O(n) space, where n is the length of the string.
+
+Reference types (arrays, objects) likewise need O(n)
+
+Alex asked a good question about why a string like 'ab' needs more space than a number like 1000. We discussed deep structure, and Enrique plugged Harvard's CS 50 videos.
+
+When we build a new array, for instance, we need O(n) auxiliary space.
+
+__07_Logarithms__
+
+Review, a logarithm is the inverse of exponentiation.
+
+        log(8) = 3
+        (assume base 2)
+        recall that 3 ** 2 = 8
+
+        log(value) = exponent
+
+We deal with binary logarithms a lot. Log(e), or the natural logarithm, might be important, too. (I mean if you're doing compound interest, it's important).
+
+The binary logarithm, roughly speaking, is the number of times you can divide a number by 2 and get 1 or less.
+
+Logarithmic complexity is good. O(1) < O(logn) < O(n) < O(nlogn) < O(n**2).
+
+Search algos have log time complexity.
+Efficient sorting has nlogn time complexity.
+
+Recursion involves log space complexity.
+
+
+
+
+
 
 
 
