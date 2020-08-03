@@ -1,0 +1,36 @@
+03 August
+Big O Notation
+
+__00_Intro__
+There are many ways to skin a cat, but some ways may be faster or more efficient than others.
+
+We can compare two methods, procedures, algorithms with Big O Notation.
+
+Colt compares Big O to the Richter scale we use to measure earthquakes. 
+
+Performance matters at large scales. We need a precise vocabulary to discuss code performativity.
+
+There are trade-offs between different approaches. Furthermore, it's useful to know where the inefficient 'choke-points' of your code.
+
+__01__
+Colt discusses how to add Sigma I (sum of all integers between 1 and n). It's more efficient to use an "Euler formula" like (n * (n + 1) / 2) than an accumulator. (total += i)
+
+The 'Euler formula' is better with respect to time. 
+
+It's tough to empirically measure performativity, since machines can be random.
+
+It's better to use Big O Notation
+
+__02__
+At a basic level, we determine time complexity of an algorithm by measuring the number of operations.
+
+The Euler formula has roughly three operations. The accumulator needs n operations.
+
+So, the 'Euler formula' is better.
+
+__03__
+If we graph performativity (time elapsed with respect to input size), we can see the general shape or curvature of different algorithmic approaches 
+
+
+
+
