@@ -1,0 +1,67 @@
+04 August
+Problem Solving Patterns
+
+These are general 'blueprints' or 'strategies' for common problems.
+
+While these will not cover every problem out there, most can help address 'archetypes' of problems.
+
+Some examples:
+        Frequency counters
+        Multiple Pointers
+        Sliding Window
+        Divide and Conquer
+        Dynamic Programming
+        Greedy Algorithms
+        Backgracking
+
+For this section, it is difficult to take notes. He demonstrates a lot of code, so it's worth practicing it on your own.
+
+__01_Frequency_Counters__
+
+Useful for avoiding nested loops
+
+        basically this is all about generating a histogram. You iterate through an iterable object (like a string or array) and increment the count for the element.
+
+        let h = {}
+        for (let el of array) {
+                if (h[el]) {
+                        h[el] += 1
+                } else {
+                        h[el] = 1
+                }
+        }
+
+__02_Multiple_Pointers__
+
+        Again, useful for avoiding nested loops.
+
+        Pointers are indexes that move toward the beginning or end of an array or other iterable object.
+
+        sometimes you have 'fast' and 'slow' pointers.
+        sometimes you have 'left' and 'right' pointers
+
+        the key is to have precise rules about when you increment (or decrement) the pointers.
+
+__03_Sliding_Window__
+
+This is tricky.
+example problem: 
+given a string, find the longest contiguous substring of unique characters.
+
+create a **window** that moves on certain conditions. usually we move the window to the right. the window tracks a subset of data within a larger set.
+
+MaxSubarrayProblem
+        given an array and a number, n, calculate the max sum of n consecutive elements in the array.
+        (sum the first n elements. when you move the window, subtract the first element, then add the next element. this is the 'slide.')
+
+
+__04_Divide_and_Conquer__
+
+A tricky problem can be divided into simpler sub-problems, which may be easier to solve.
+
+The example Colt worked through is Binary Search of a sorted array.
+
+
+
+
+

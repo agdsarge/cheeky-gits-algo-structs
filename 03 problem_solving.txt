@@ -1,0 +1,97 @@
+04 August
+Problem Solving Approach
+
+__00_Intro_to_problem_solving__
+
+Strategies to keep in mind when confronted with a novel problem.
+
+What is an algorithm?
+A process or set of steps to accomplish a certain task. 
+        (etymology => 1690s "Arabic system of computation." 
+        from French algorithme. 
+        from Latin Algorismus 
+        from transliteration of medieval Arabic "Al-Khwarizmi," a scholar from Uzbekistan whose texts introduced Islamic Golden Age math to the West.)
+
+
+How to improve?
+        1. Devise a plan for solving problems.
+        2. Master common problem solving patterns.
+
+On YouTube, you can search 'cracking the coding interview.'
+A series by Omkar of videos produced by HackerRank goes through a lot of material. 
+Good resource.
+
+__01_Understand_the_problem__
+
+Steele recommends _How to Solve It_ by George Polya.
+
+Solving novel problems is difficult. The first step is to understand the problem. 
+
+ It's tempting to just start hacking away at the keyboard, but it's worth thinking critically about the problem first.
+
+        1. Restate the probblem in your own words.
+        2. What are the inputs of the problem?
+        3. What is the expected form of the output?
+        4. Can the outputs be determined from the inputs. Do I have enough information to solve the problem?
+        5. How should I label the important data in the problem?
+
+Steele walks through a challenge to implement addition. He does a good job about talking about edge cases (large inputs, missing inputs, etc.).
+
+__02_Explore_examples__
+
+examples are a sanity check. they're like a unit test for yourself.
+
+        start with simple valid examples
+        proceed to more complicated valid examples.
+        consider examples with empty inputs
+        consider examples with invalid inputs
+
+__03_Break_it_Down__
+
+write down the process of the codes.
+not necessarily pseudo-code, but a natural-languageexplanation of your thought-process
+
+        ** This will help you catch the conceptual issues you might not yet understand! **
+
+Steele walks through an example of generating a histogram of character counts in a string.
+
+__04_Solve_or_Simplify__
+
+Get down to brass tacks, and solve it. 
+If you can't solve 100%, solve a simpler version of the problem.
+
+It's okay to address each part of the process separately.
+
+__05_Look_back_and_refactor__
+
+Even if you have solved, it can pay to refactor
+
+        Can you check the result? (Does it work?)
+        Can you derive the result differently?
+        Can you understand the code at a glance?
+        Can you use the result or method for some other problem?
+        Can you improve the performance of your solution?
+        Can you think of other ways to refactor?
+        How have others solved this problem?
+
+        Steele notes that RegEx can be inefficient, so maybe refactor without them. Knowing the character codes might be useful.
+        More important than memorizing char codes is the ability to discuss performativity trade-offs with the interviewer.
+
+__06_Recap__
+
+Recall the five steps:
+        1. Restate the probblem in your own words.
+        2. What are the inputs of the problem?
+        3. What is the expected form of the output?
+        4. Can the outputs be determined from the inputs. Do I have enough information to solve the problem?
+        5. How should I label the important data in the problem?
+
+
+
+
+
+        
+
+
+
+
