@@ -1,0 +1,124 @@
+05 August 2020
+
+Recursion
+
+__00_Introduction_(Martin_and_the_Dragon)__
+
+Colt tells a simple and cute fable about a dragon that judges whether the first number of an array is odd or even. 
+Martin tricks the dragon into saying whether the entire array has a single odd or even number.
+
+Colt discusses how this fable illustrates the need for a base case and a call stack.
+
+__01_Why_Use_Recursion?__
+
+Formal definition for recursion:
+        A process or function that calls itself.
+
+Recursion is everywhere! JSON.stringify(), for instance, is a recursive function. (It's defined in the source code of the given browser.)
+
+When we write our own data structures, traversal often depends on recursion. 
+Recursion is an alternative to iteration, and sometimes it is cleaner.
+
+__02_The_Call_Stack__
+
+Behind the scenes in JS, a data structure manages what happens when functions are invoked.
+
+This is the Call Stack.
+
+When a function is invoked, it is pushed on the top of the call stack. 
+When the function returns a value or the function ends, the compiler pops the function from the stack.
+
+Recursive functions push the same function onto the Call Stack over and over again.
+
+__03_Baby's_First_Recursive_Function__
+
+Base Case: the condition when the recursion ends
+
+Different input: mutate the input of the recursive call, otherwise you'd be stuck in an infinite loop.
+
+for isntance:
+
+const countDown = (num) => {
+        if (num <= 0) {
+                console.log("All done!"}
+        } else {
+                console.log(num)
+                num--
+                countDown(num)
+        }
+}
+
+Observe that we have a base case (num <=0) and a way to change our input (num--).
+
+Colt also goes through a recursive solution to finding Sigma i.
+
+const sumRange = num => {
+        if (num === 1) {
+                return 1
+        } else {
+                return num + sumRange(num - 1)
+        }
+}
+
+__04_Factorial_Examples__
+
+const factorial = num => {
+        if (num === 1) {
+                return 1
+        } else {
+                return num * factorial(num--)
+        }
+}
+
+__05_Common_Pitfalls__
+
+        1. Forgetting a base case or improperly defining a base case
+        2. Returning the wrong thing or forgetting to return at all!
+        3. Forgetting to change the input before the recursive call.
+
+
+__06_Helper_method_recursion__
+
+There's an outer function and an inner function.
+The inner method is recursive.
+The helper function might collect values into an array or reference object.
+
+const collectOdds = arr => {
+        let result = []
+        function helper(input){
+                if (input.length === 0) {
+                        return;
+                } 
+                if input[0] % 2 !== 0 {
+                        result.push(input[0]
+                }
+                helper(input.slice(1))
+
+        }
+        helper(arr)
+        return result
+}
+
+__07_Pure_recursion__
+
+Not necessarily easier or better. 
+The pure recursive function is totally self-contained without an external datastructure.
+
+const collectOdds = (arr) => {
+        let newArr = []
+
+        if (arr.length === 0) {
+                return newArr
+        }
+
+        if (arr[0] % 2 !== 0) {
+                newArr.push(arr[0])
+        }
+
+        newArr = newArr.concat(collectOdds(arr.slice(1)))
+        return newArr
+}
+
+
+
+
