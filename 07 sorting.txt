@@ -1,0 +1,139 @@
+06 August
+
+Sorting!
+
+
+__00_Introduction_to_sorting__
+Sorting is a notorious topic. It's important, and it's now a quintessential CS topic.
+
+Sorting is the process of rearranging the items in a collection so that the items are in some kind of order.
+
+(Note: strictly speaking, a collection with non-unique leements is partially ordered. 
+If a collection of unique objects is ordered in such a way that every sub-set has a least term, we say that it is well-ordered.)
+
+There are a million ways to sort. 
+
+Every algo has a set of pros and a set of cons.
+
+(It helps to know the shape of the input data).
+
+It's a good interview topic. So, hey, that's why we're here.
+
+Bubble
+Selection
+Insertion
+
+__01_JS_Built-in_sorting__
+
+The built-in array.sort() method sorts by converting every element to a string. thus [6, 4, 15, 10].sort() => [10, 15, 4, 6]
+
+*But* we can instruct JS to sort with a comparator function.
+
+The comparator function accepts two inputs, (a, b)
+        If output is negative, a precedes b
+        If positive, a succeeds b
+        If zero, then they are equal
+e.g.
+function numCompare(a, b) => {
+        return a - b
+}
+
+thus, 
+[10, 3, 6, 1].sort(numCompare) => [1, 3, 6, 10]
+
+
+
+__02_Bubble_Sort__
+
+A good and basic foundation
+
+        The largest value bubbles to the top!
+
+We make pairwise comparisons, and swap if necessary.
+
+
+function bubSort(arr) {
+        let noSwaps
+        for (let i = arr.length - 1; i > 0; i--) {
+                noSwaps = true
+                for (let j = 0; j < i; j++) {
+                        if (arr[j] > [arr[j + 1]) {
+                                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+                                noSwaps = false
+                        }
+                }
+                if (noSwaps) {
+                        break
+                }
+        }
+}
+
+Bubble Sort is O(n**2) in the worst case. 
+If the data is already sorted or nearly sorted (best case), an optimized BubbleSort (with noSwaps) is O(n)
+
+
+__03_Selection_Sort__
+
+Similar to bubble sort, but the least terms are sorted first. 
+We find the least element of a subarray, and we swap it with the first element of the subarray.
+
+function selSort(arr) {
+
+        for (let i = 0; i < arr.length; i++) {
+                let lowest = i
+                for (let j = i+1; j < arr.length; j++) {
+                        if (arr[j] < arr[lowest]) {
+                                lowest = j
+                        }
+                }
+                [arr[i], arr[lowest]] = [arr[lowest], arr[i]]
+        }
+
+}
+
+Selection sort shines when you want to minimize the number of swaps. 
+Bubble sort, in comparison, needs many more swaps.
+
+__04_Insertion_Sort__
+
+Insertion sort builds up a sort by gradually creating a larger left portion, which is always sorted.
+We insert the 'next' value into the correct place of the sorted left portion.
+
+O(n**2) in the worst case
+
+function insertSort(arr) {
+        for (let i = 1; i < arr.length; i++) { // begin at the second element
+                if (arr[i] >= arr[i - 1]) { // if el is greater than the sorted array, it is correct
+                        continue
+                } else {
+                        let q = arr[i]
+                        for (let j = 0; j <= i - 1; j++) { // this is the sorted left portion
+                                if (q <= arr[j]) {          
+                                        arr.splice(i, 1)
+                                        arr.splice(j, 0, q)                               
+                                        break
+                                }
+                        }
+                }
+        }
+        return arr
+}
+
+It should be noted that neither Enrique nor Abhinav was first to write a valid insertion sort.
+Davis did it first :).
+
+Insertion sort is good at "online data." That is, we get an continually updated array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
