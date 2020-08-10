@@ -17,10 +17,12 @@ function insertSort(arr) {
     return arr
 }
 
-let test0 = [0]
 let test1 = [5, 4, 3, 2, 1]
 let test2 = [-9, -7, 8, 12, 20, 16, 0, 19, -10, -8, 14, -2, 3, 9, -1, 7, 18, 0]
+let test0 = [0]
 
 console.log(insertSort(test0))
 console.log(insertSort(test1))
 console.log(insertSort(test2))
+
+

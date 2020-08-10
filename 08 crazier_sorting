@@ -1,0 +1,34 @@
+07 August
+
+Meatier, juicier algorithms (Colt Steele)
+
+__00_Introduction__
+
+quadratic sorts are slower than nlogn sorts. quads do not square well.
+
+__01_Merge_Sort__
+
+von Neumann invented this (so far as we know).
+
+Merging is a divide-and-conquer approach.
+
+the 'merge' aspect is the combination of two previously-sorted arrays.
+
+Observe that an array with length less than 1 is already sorted.
+
+please see colt_merge.js
+
+nLogn time!
+
+
+__02_Quick_Sort__
+
+also a recursive sort
+
+select a pivot point (any element) and move stuff around relative to the pivot
+(lesser elements to left, greater elements to right)
+
+this is extremely tricky.
+write your own implementation 3x or 4x.
+
+
