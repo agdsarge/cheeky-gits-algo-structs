@@ -1,0 +1,86 @@
+17 August
+Heaps
+
+Heaps are a category of tree
+    All heaps are trees
+    There are many types of heaps
+
+Heaps are commonly used for priority queues.
+Heaps are also used for graph traversals.
+
+Let's consder binary heaps
+In a max binary heap, all parent nodes are always larger than child nodes
+
+In a min binary heap, all binary nodes are always smaller than child nodes
+
+The left child is added before a right child.
+
+There's no difference between left and right nodes. 
+There is no implied ordering between siblings.
+
+
+let's implement a MaxBinaryHeap:
+
+    to insert, 
+        add to the bottom, and 
+        bubble up to the correct spot!
+
+class MaxBinaryHeap {
+    constructor() {
+        mbh = []
+    }
+    
+    insert(val) {
+        this.mbh.push(val)
+            if (this.mbh.length > 1) {
+                let currIdx = this.mbh.length - 1
+                let parentIdx = Math.floor((currIdx - 1) / 2)
+                while (val > mbh[parentIdx]) {
+                    [this.mbh[currIdx], this.mbh[parentIdx]] = [this.mbh[parnetIdx], this.mbh[currIdx]]
+                    currIdx = parentIdx
+                    parentIdx = Math.floor((currIdx - 1) / 2)
+                }
+            }
+            return this.mbh
+    } 
+    
+    extractMax() {
+        const max = this.mbh[0]                
+        const end = this.mbh.pop
+        this.mbh[0] = end
+        this.sinkDown()
+        return max
+
+    }
+    sinkDown() {
+        let idx = 0
+        const length = this.mbh.length
+        const element = this.mbh[0]
+
+        while (true) {
+            let leftChildIdx = 2 * idx + 1
+            let rightChildIdx = 2 * idx + 2
+            let leftChild, rightChild
+            let swap = null;
+
+            if (leftChildIdx < length) {
+                leftChild = this.mbh[leftChildIdx]
+                if(leftChild > element) {
+                    swap = leftChildIdx
+                }
+            }
+            if (rightChildIdx < length) {
+                if ((swap === null && rightChild > elemeent) || (swap !== null && rightChild > leftChild)) {
+                    swap = rightChildIdx
+                }
+            }        
+
+            if (swap === null) break; 
+            this.values[idx] = this.values[swap]
+            this.values[swap] = this.values[element]
+            idx = swap
+        }
+    }
+}
+
+

@@ -1,0 +1,74 @@
+17 August
+
+Traversal
+
+DFS has three sub-traversals
+
+    DFS PreOrder
+    DFS PostOrder
+    DFS InOrder
+
+PreOrder - visit node, visit left, visit right
+    This is very recursive!
+
+    variable to store values of visited nodes
+    store root of BST in a variable called current
+    helper function
+        push val of the node
+        if that node has a left prop, call the helper function on the left prop
+        if that node has a right prop, call the helper function on the right side
+    invoke the helper function with the curr variable
+
+    return the array of values
+
+PostOrder - visit left, visit right, visit node
+
+InOrder - visit left, visit node, visit right
+
+
+    DFSPreOrder () {
+        data = []
+        function traverse(node) {
+            data.push(node)
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+        }
+        traverse(this.root)
+        return data
+    }
+
+    DFSPostOrder() {
+        data = []
+        function traverse(node) {
+            if (node.left) traverse(node.left)
+            if (node.right) traverse(node.right)
+            data.push(node)
+        }
+        traverse(this.root)
+        return data
+    }
+
+    DFSInOrder() {
+        
+        data = []
+        function traverse(node) {
+            if (node.left) traverse(node.left)
+            data.push(node)
+            if (node.right) traverse(node.right)
+        }
+        traverse(this.root)
+        return data
+        
+    }
+
+There's no fast-and-easy answer about which type of search to select
+BFS and DFS have same time complexity, 
+but BFS might have greater space complexity.
+    especially in a balanced tree!
+
+Note that InOrder DFS will return values in-order!
+
+
+
+
+

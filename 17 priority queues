@@ -1,0 +1,35 @@
+18 August
+
+Priority Queues
+
+Binary heaps are used to build priority queues.
+
+A PQ is a data strucuture in which every element has a priority. 
+Elements with higher priorities are served beofre elements with lower priorities.
+
+(E.g. a gunshot wound in the ER has a higher priority than a nasty papercut.)
+
+Priority queues are a separate concept.
+You can build them with other data structures.
+We will use heaps because it's efficient.
+
+For our purposes, a lower score is a higher priority.
+Thus, in effect, we have a min binary heap.
+
+
+class Node {
+    constructor(val, priority) {
+        this.val = val
+        this.priority  = priority
+    }
+}
+
+class PriorityQueue {
+    constructor() {
+        values = []
+    }
+
+    
+
+}
+

@@ -1,0 +1,87 @@
+node
+-val
+-next
+-prev
+
+Doubly Linked List
+-head
+-tail
+-length
+
+class Node {
+    constructor(val) {
+        this.val = null;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    push(val) {
+        let newNode = new Node(val)
+        if (this.length === 0) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            this.tail.next = newNode
+            newNode.prev = this.tail
+            this.tail = newNode
+        }
+        this.length++
+        return this
+    }
+
+    pop() {
+        if (this.length === 0) {
+            return undefined
+        } else {
+            let deletedItem = this.tail
+            if (this.length === 1) {
+                this.head = null
+                this.tail = null
+            } else {
+                this.tail = deletedItem.prev
+                this.tail.next = null
+                deletedItem.prev = null
+            }
+        }
+        this.length--
+        return deletedItem
+    }
+
+    shift() {
+        if (this.length < 2) {
+            return this.pop()
+        }
+        else {
+            let deletedItem = this.head
+            this.head = deletedItem.next
+            this.head.prev = null
+            deletedItem.next = null
+            this.length--
+            return deletedItem
+        }
+    }
+
+    unshift(val) {
+        if (this.length === 0) {
+            return this.push(val)
+        } else {
+            let newNode = new Node(val)
+            newNode.next = this.head
+            this.head.prev = newNode
+            this.head = newNode
+        }
+        this.length++
+        return this
+    }
+}
+
+
+

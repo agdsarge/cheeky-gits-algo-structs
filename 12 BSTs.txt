@@ -1,0 +1,57 @@
+Binary Search Tree
+
+a sorted binary tree. for a given parent, all children less than the parent are to the left.
+
+trees
+root
+
+child - a node that is connected to another element of the tree when moving away from the node
+parent 
+
+
+
+
+class Node {
+    constructor(val) {
+        this.val   = val
+        this.left  = null
+        this.right = null
+    } 
+}
+
+class BST {
+    constructor() {
+        this.root = null
+        return this
+    }
+    
+    insert(val) {
+        let newNode = new Node(val)
+        if (!this.root) {
+            this.root = newNode
+        }
+    
+        let currNode = this.root
+
+        while (true) {
+            if (newNode.val === currentNode.val) {break}
+            if ( newNode.val < currentNode.val) {
+                if (currentNode.left) {
+                    currentNode = currentNode.left
+                } else {
+                    currentNode.left = newNode;
+                    break
+                }
+            } else {
+                if (currentNode.right) {
+                    currentNode = currentNode.right
+                } else {
+                    currentNode.right = newNode
+                    break
+                }
+            }
+        }
+        return this
+    }
+
+}
